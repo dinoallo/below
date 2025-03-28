@@ -48,7 +48,7 @@ spec:
         env:
         - name: RUST_LIB_BACKTRACE
           value: "1"
-        command: ["/below"]
+        command: ["/usr/local/bin/below"]
         args:
         - --config=/etc/below/below.conf
         - record
