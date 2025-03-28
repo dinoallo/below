@@ -58,6 +58,6 @@ RUN apt-get install -y \
   libncursesw5 \
   zlib1g
 
-COPY --from=build /below/target/release/below /below
+COPY --from=build /below/target/release/below /usr/local/bin/below
 
-ENTRYPOINT ["/below"]
+ENTRYPOINT ["/usr/local/bin/below"]
