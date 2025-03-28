@@ -44,7 +44,7 @@ spec:
     spec:
       containers:
       - name: below
-        image: below/below:v0.9.0
+        image: dinoallo/below:v0.9.0
         env:
         - name: RUST_LIB_BACKTRACE
           value: "1"
