@@ -25,15 +25,6 @@ metadata:
   labels:
     k8s-app: below
 spec:
-  affinity:
-    podAntiAffinity:
-      requiredDuringSchedulingIgnoredDuringExecution:
-      - labelSelector:
-          matchLabels:
-            k8s-app: below
-        topologyKey: kubernetes.io/hostname
-  tolerations:
-  - operator: Exists
   selector:
     matchLabels:
       app: below
@@ -41,7 +32,16 @@ spec:
     metadata:
       labels:
         app: below
-    spec:
+    spec:   
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchLabels:
+                k8s-app: below
+            topologyKey: kubernetes.io/hostname
+      tolerations:
+      - operator: Exists
       containers:
       - name: below
         image: dinoallo/below:v0.9.0
